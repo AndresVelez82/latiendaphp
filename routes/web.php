@@ -16,3 +16,31 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('paises' , function(){
+    $paises = [
+        "Colombia"=> [ 
+            "cap" => "Bogota",
+            "mon" => "Peso",       
+            "pob" => 51,
+            "ciu" => [
+                "Medellin",
+                "Cali",
+                "Pereira"
+            ]
+        ] ,
+        "Brasil" => [
+            "cap" => "Brasilia",
+            "mon" => "Real",       
+            "pob" => 40,
+            "ciu" => [
+                "Rio De Janeiro",
+                "Sao Paulo",     
+            ]
+        ]
+ ];  
+
+return view('paises') 
+->with('paises', $paises);
+
+});
